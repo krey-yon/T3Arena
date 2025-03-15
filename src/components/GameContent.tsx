@@ -28,7 +28,8 @@ export default function GameContent() {
       return;
     }
 
-    const ws = new WebSocket("ws://localhost:3001");
+    const ws = new WebSocket(process.env.NEXT_PUBLIC_BACKEND_URL!);
+    console.log(process.env.NEXT_PUBLIC_BACKEND_URL!);
 
     ws.onopen = () => {
       console.log("WebSocket connection established");

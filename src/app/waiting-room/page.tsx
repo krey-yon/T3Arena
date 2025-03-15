@@ -12,7 +12,7 @@ export default function WaitingRoom() {
 
 useEffect(() => {
   console.log(socket)
-    const ws = new WebSocket("ws://localhost:3001"); // Connect to WebSocket server
+    const ws = new WebSocket(process.env.NEXT_PUBLIC_BACKEND_URL!); // Connect to WebSocket server
     ws.onopen = () => {
       console.log("Connected to WebSocket server");
       setStatus("Waiting for an opponent...");
